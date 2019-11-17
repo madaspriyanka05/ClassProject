@@ -1,0 +1,16 @@
+package com.lti.model;
+import java.time.LocalTime;
+import java.util.List;
+import javax.persistence.*;
+
+@Entity
+@Table(name="TBL_STOPS")
+public class Bus {
+
+	private int busno;
+	private String operator;
+	private LocalTime departureTime;
+	private LocalTime arrivalTime;
+	
+	private List<Stops> stops;
+}

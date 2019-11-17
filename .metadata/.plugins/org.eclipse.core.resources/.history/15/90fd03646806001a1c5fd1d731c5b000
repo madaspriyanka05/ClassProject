@@ -1,0 +1,43 @@
+package com.lti.component;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.lti.MyException.CarPartException;
+
+
+
+public class CarPartsInventoryImp  implements CarPartsInventory 
+{
+
+	public void addNewPart(CarPart carPart) throws CarPartException, ClassNotFoundException, SQLException
+	{
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+			
+			PreparedStatement ps=con.prepareStatement("insert into CarPart values(?,?,?,?,?)");
+			ps.setInt(1, carPart.getPartNo());
+			ps.setString(2, carPart.getPartName());
+			ps.setString(3,carPart.getCarModel());
+			ps.setDouble(4, carPart.getQuantity());
+			ps.setDouble(5, carPart.getPrice());
+			
+			ps.executeUpdate();
+		}
+		catch(CarPartException e){System.out.println("DB Exception"+e);}
+		//throw an userdefined exception 
+	}
+
+	public List<CarPart> getAvailableParts() 
+	{
+		
+		return null;
+	}
+
+}

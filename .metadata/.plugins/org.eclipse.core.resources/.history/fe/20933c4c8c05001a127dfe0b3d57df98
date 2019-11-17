@@ -1,0 +1,12 @@
+package com.lti.component;
+
+public class CurrencyConverter  implements CurrencyConverterIntf
+{
+	public double dollarsToRupees(double dollars)
+	{
+		
+		return dollars*71.56;
+		
+	}
+
+}

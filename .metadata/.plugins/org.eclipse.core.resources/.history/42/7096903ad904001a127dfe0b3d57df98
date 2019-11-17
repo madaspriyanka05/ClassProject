@@ -1,0 +1,46 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Album;
+import com.lti.model.Cart;
+import com.lti.model.Item;
+import com.lti.model.Song;
+
+
+public class CartItemsTest 
+{
+
+	@Test
+	public void carttest()
+	{
+
+		Cart c=new Cart();
+		c.setTotal(25000);
+		
+		GenericDao dao=new GenericDao();
+		dao.save(c);
+	}
+	
+	@Test
+	public void addItemsToCart()
+	{
+		Cart c=new Cart();
+		c.setTotal(25000);
+		Item i=new Item();
+		i.setQuantity(2);
+		i.setCart(c);
+		
+		
+				
+		
+	}
+
+}

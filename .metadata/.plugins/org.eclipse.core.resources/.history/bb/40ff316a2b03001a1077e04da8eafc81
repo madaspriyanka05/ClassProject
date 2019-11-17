@@ -1,0 +1,46 @@
+package com.lti.model;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="TBL_ACC_TRAN")
+public class Transcation
+{
+	
+	@Id
+	@GeneratedValue
+	private int txNo;
+	
+	private String txType;
+	private double txAmt;
+	
+	
+	@ManyToOne
+	@JoinColumn((name="accNo", nullable=true)
+	private List <Account> acct;
+	
+	public int getTxNo() {
+		return txNo;
+	}
+	public void setTxNo(int txNo) {
+		this.txNo = txNo;
+	}
+	public String getTxType() {
+		return txType;
+	}
+	public void setTxType(String txType) {
+		this.txType = txType;
+	}
+	public double getTxAmt() {
+		return txAmt;
+	}
+	public void setTxAmt(double txAmt) {
+		this.txAmt = txAmt;
+	}
+	
+	
+
+}

@@ -1,0 +1,9 @@
+package com.lti.component;
+
+public interface Vehicle
+{
+	public int changeGear(int newGear);
+	public int speedUp(int increment);
+	 public int applyBrakes(int decrement);
+
+}

@@ -1,0 +1,11 @@
+package com.lti.component;
+
+public class Calculator 
+{
+	public double mul(double a,double b)
+	{
+		double m=mul (a*b);
+		return m;
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.lti.component;
+
+import org.springframework.stereotype.Component;
+
+@Component("TE")
+public class TextEditor 
+{
+	 SpellChecker sc=new SpellChecker();
+	public void load(String e)
+	{
+		sc.checkSpellingMistakes(e);
+		System.out.println("TextEditor Document Loaded----->"+e);
+	}
+	
+	
+}

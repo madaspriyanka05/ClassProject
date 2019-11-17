@@ -1,0 +1,11 @@
+package com.lti.test;
+
+public class TestCarAudioSystem
+{
+	@Test
+	public void caraudioSystem(double a)
+	{
+		
+	}
+
+}

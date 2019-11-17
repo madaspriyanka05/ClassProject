@@ -1,0 +1,16 @@
+package com.lti.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestingSpring 
+{
+
+	public static void main(String[] args)
+	{
+		//Loading Spring's IOC Container
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("app-config.xml");
+
+	}
+
+}

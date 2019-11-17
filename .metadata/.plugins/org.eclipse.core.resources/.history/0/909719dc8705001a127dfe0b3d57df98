@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.lti.component;
+
+/**
+ * @author priyanka
+ *
+ */
+public interface Calculator_Interface 
+{
+	
+
+}

@@ -1,0 +1,31 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.component.CarPart;
+import com.lti.component.CarPartsInventory;
+
+public class TestCarParts {
+
+	@Test
+	public void test() 
+	{
+	   ApplicationContext ctx= new ClassPathXmlApplicationContext("app-config.xml");
+	   CarPartsInventory cp=(CarPartsInventory) ctx.getBean("cpi");
+	   
+	  CarPart c=new CarPart();
+	  c.setPartNo(101);
+	  c.setPartName("Mirrors");
+	  c.setCarModel("Honda Bravo");
+	  c.setQuantity(2);
+	  c.setPrice(5000);
+	  
+	  cp.addNewPart(c);
+	  
+	}
+
+}

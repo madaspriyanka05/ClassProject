@@ -1,0 +1,25 @@
+package com.lti.model;
+import java.time.LocalTime;
+import java.util.List;
+import javax.persistence.*;
+
+@Entity
+@Table(name="TBL_BUS")
+public class Bus {
+
+	@Id
+	@GeneratedValue
+	private int busno;
+	private String operator;
+	
+	@Column(columnDefinition="timestamp")
+	private LocalTime departureTime;
+	
+	@Column(columnDefinition="timestamp")
+	private LocalTime arrivalTime;
+	
+	@OneToMany(mappedBy="bus")
+	private List<Stop> stops;
+
+	
+}

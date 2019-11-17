@@ -1,0 +1,27 @@
+package com.lti.component;
+
+import org.springframework.stereotype.Component;
+
+@Component("VC")
+public class Car implements Vehicle
+{
+
+	public int changeGear(int newGear)
+	{
+	  
+		return newGear*100;
+	}
+
+	public int speedUp(int increment)
+	{
+		 int speed = speed + increment; 
+		return speed;
+	}
+
+	public int applyBrakes(int decrement) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
+}

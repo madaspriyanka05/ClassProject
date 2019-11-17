@@ -1,0 +1,8 @@
+package com.lti.component;
+
+public interface CarPartsInventory
+{
+	public void addNewPart(CartPart carPart);
+	public List<CarPart> getAvailableParts();
+	
+}

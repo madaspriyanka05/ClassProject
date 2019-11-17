@@ -1,0 +1,8 @@
+package com.lti.component;
+
+public class Car  
+{
+
+	 private AudioSystem audioSystem;
+	
+}

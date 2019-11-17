@@ -1,0 +1,10 @@
+package com.lti.model;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="TBL_ACC_TRAN")
+public class Transcation {
+
+}

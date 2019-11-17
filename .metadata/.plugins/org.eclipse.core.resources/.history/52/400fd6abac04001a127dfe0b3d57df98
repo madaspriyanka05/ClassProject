@@ -1,0 +1,62 @@
+package com.lti.model;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="TBL_ACC_TRAN")
+public class Transcation
+{
+	
+	@Id
+	
+	private int txNo;
+	
+	private String txType;
+	private double txAmt;
+	private LocalDateTime d;
+	
+	
+	
+	@ManyToOne
+	@JoinColumn(name="ACC_NO", nullable=true)
+	private Account acct;
+	
+	public int getTxNo() {
+		return txNo;
+	}
+	public void setTxNo(int txNo) {
+		this.txNo = txNo;
+	}
+	public String getTxType() {
+		return txType;
+	}
+	public void setTxType(String txType) {
+		this.txType = txType;
+	}
+	public double getTxAmt() {
+		return txAmt;
+	}
+	public void setTxAmt(double txAmt) {
+		this.txAmt = txAmt;
+	}
+	public Account getAcct() {
+		return acct;
+	}
+	public void setAcct(Account acct) {
+		this.acct = acct;
+	}
+	
+	public LocalDate getD() {
+		return d;
+	}
+	public void setD(LocalDate d) {
+		this.d = d;
+	}
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package com.lti.MyException;
+
+public class CarPartException extends Exception
+{
+	public CarPartException()
+	{
+		super();
+	}
+
+}

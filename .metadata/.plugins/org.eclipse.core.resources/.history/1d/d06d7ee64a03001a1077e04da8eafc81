@@ -1,0 +1,54 @@
+package com.lti.dao;
+
+import javax.persistence.*;
+
+
+public class GenericDao 
+	{
+	 
+		
+		public void save(Object obj)
+		{
+			EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracletest");
+			EntityManager em=emf.createEntityManager();
+			EntityTransaction tx=em.getTransaction();
+			tx.begin();
+			//merge method can be used for insert and update both and its does the operations on id 
+			em.merge(obj);//JPA
+			tx.commit();
+			em.close();
+			emf.close();
+		}
+		
+								//ReflectionAPI
+								//		|
+	   public Object fetchById(Class class1,Object pk)
+		{
+			EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracletest");
+			EntityManager em=emf.createEntityManager();
+			Object o=em.find(class1,pk);
+			em.close();
+			emf.close();
+			return o;
+
+		}
+	  
+//	   public void removeById(Class class1,Object pk)
+//		{
+//			EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracletest");
+//			EntityManager em=emf.createEntityManager();
+//			Object o=em.find(class1,pk);
+//			EntityTransaction tx=em.getTransaction();
+//			tx.begin();
+//			em.remove(o);
+//			
+//			tx.commit();
+//			
+//			
+//			em.close();
+//			emf.close();
+//			
+//
+//		}
+	 
+}

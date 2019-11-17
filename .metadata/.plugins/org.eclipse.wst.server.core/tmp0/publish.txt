@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Nov 16 16:39:16 PST 2019
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\vshadmin\\.m2\\repository\\org\\springframework\\spring-web\\5.1.3.RELEASE\\spring-web-5.1.3.RELEASE.jar=D\:\\apache-tomcat-9.0.27\\wtpwebapps\\spring-mvc\\WEB-INF\\lib\\spring-web-5.1.3.RELEASE.jar
+org.eclipse.jst.jee.server\:spring-mvc=D\:\\apache-tomcat-9.0.27\\wtpwebapps\\spring-mvc

@@ -1,0 +1,28 @@
+package com.lti.component;
+
+import org.springframework.stereotype.Component;
+
+@Component("VC")
+public class Car implements Vehicle
+{
+
+	public void changeGear(int newGear) 
+	{
+		
+		
+	}
+
+	public void speedUp(int increment) 
+	{
+	
+		
+	}
+
+	public void applyBrakes(int decrement) 
+	{
+
+		
+	}
+	
+
+}

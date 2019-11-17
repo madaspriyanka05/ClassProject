@@ -1,0 +1,16 @@
+package com.lti.component;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Car  
+{
+
+	 private AudioSystem audioSystem;
+	
+	 @Autowired //DI 
+	 public void playmusic()
+	 {
+		 //audioSystem= new AudioSystem();
+		 audioSystem.playFM(91.1);
+	 }
+}

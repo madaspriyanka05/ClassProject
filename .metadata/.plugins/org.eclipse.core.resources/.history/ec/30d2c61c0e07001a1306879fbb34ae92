@@ -1,0 +1,82 @@
+package com.lti.component;
+
+/**
+ * @author Priyanka 
+ * @Date 14/11/19
+ */
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+import com.lti.MyException.CarPartException;
+
+@Component("cpi2")
+public class CarPartsInventoryImp3 implements CarPartsInventory {
+	@Autowired
+	private DataSource dataSource;// Helps to connect to the connection pool its
+									// written in app-config.xml file
+
+	public void addNewPart(CarPart carPart) 
+	{
+	  
+			try{
+			JdbcTemplate jt=new JdbcTemplate(dataSource);   //JdbcTemplate : API by swing to perform Jdbc operations
+			jt.update("insert into CARPART values(?,?,?,?,?)",
+
+			carPart.getPartNo(),
+			carPart.getPartName(),
+			carPart.getCarModel(),
+			carPart.getQuantity(),
+			carPart.getPrice(),
+			}catch
+			
+
+		} 
+
+	public List<CarPart> getAvailableParts() throws CarPartException {
+
+		List<CarPart> cp = new ArrayList<CarPart>();
+
+		try {
+
+			Connection con = dataSource.getConnection();
+
+			Statement stmt = con.createStatement();
+			String sql = "SELECT * FROM CarPart";
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				CarPart c = new CarPart();
+				c.setPartNo(rs.getInt(1));
+				c.setPartName(rs.getString(2));
+				c.setCarModel(rs.getString(3));
+				c.setQuantity(rs.getDouble(4));
+				c.setPrice(rs.getDouble(5));
+				cp.add(c);
+
+			}
+
+		} catch (Exception e) {
+			System.out.println("DB Exception" + e);
+			try {
+				throw new CarPartException("MyException", e);
+			} catch (CarPartException e1) {
+				System.out.println("Error in code" + e);
+			}
+		}
+
+		return cp;
+	}
+}

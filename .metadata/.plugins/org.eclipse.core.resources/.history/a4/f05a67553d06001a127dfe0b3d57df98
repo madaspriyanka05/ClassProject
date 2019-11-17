@@ -1,0 +1,13 @@
+package com.lti.component;
+
+public class TextEditor 
+{
+	 SpellChecker sc=new SpellChecker();
+	public void load(String e)
+	{
+		sc.checkSpellingMistakes(e);
+		System.out.println("TextEditor Document Loaded----->"+e);
+	}
+	
+	
+}

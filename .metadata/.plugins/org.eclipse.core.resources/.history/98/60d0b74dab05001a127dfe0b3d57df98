@@ -1,0 +1,13 @@
+package com.lti.component;
+
+import org.springframework.stereotype.Component;
+
+@Component("odio")
+public class AudioSystem
+{
+	public double playFM(double frequency)
+	{
+		System.out.println("You are listening to==>"+frequency);
+	}
+
+}

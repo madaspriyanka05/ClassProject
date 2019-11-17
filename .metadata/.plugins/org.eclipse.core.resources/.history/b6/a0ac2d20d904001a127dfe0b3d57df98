@@ -1,0 +1,113 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Album;
+import com.lti.model.Cart;
+import com.lti.model.Item;
+import com.lti.model.Song;
+
+
+public class CartItemsTest 
+{
+
+	@Test
+	public void carttest()
+	{
+
+		Cart c=new Cart();
+		c.setTotal(25000);
+		
+		GenericDao dao=new GenericDao();
+		dao.save(c);
+	}
+	
+	@Test
+	public void addItemsToCart()
+	{
+		Cart c=new Cart();
+		c.setTotal(25000);
+		Item i=new Item();
+		i.setQuantity(2);
+		i.setCart(c);
+		
+		Song s2=new Song();
+		s2.setId(20);
+		s2.setTitle("Radha");
+		s2.setArtist("Vishal-Shekhar");
+		s2.setDuration(3.56);
+		
+		
+		
+		Song s3=new Song();
+		s3.setId(30);
+		s3.setTitle("Kukkad");
+		s3.setArtist("Vishal-Shekhar");
+		s3.setDuration(3.56);
+		
+		
+		
+		List <Song> songs=new ArrayList<Song>();
+		songs.add(s1);
+		songs.add(s2);
+		songs.add(s3);
+		
+		al.setSongs(songs);
+		s1.setAlbum(al);
+		s2.setAlbum(al);
+		s3.setAlbum(al);
+		
+		GenericDao d = new GenericDao();
+		d.save(al);
+		
+		
+		
+		//CREATING AN ANOTHER ALBUM
+		Album a2=new Album();
+		a2.setName("Student Of The Year 2");
+		a2.setReleaseDate(LocalDate.of(2019, 9, 12));
+		a2.setGenre("Bollywood");
+		
+		Song s4=new Song();
+		s4.setId(11);
+		s4.setTitle("The Jawaani Song");
+		s4.setArtist("Vishal");
+		s4.setDuration(3.00);
+		
+		
+		Song s5=new Song();
+		s5.setId(22);
+		s5.setTitle("Fakira");
+		s5.setArtist("Neeti Mohan");
+		s5.setDuration(4.02);
+		
+		
+		
+		Song s6=new Song();
+		s6.setId(33);
+		s6.setTitle("The Hook Up Song");
+		s6.setArtist("Neha Kakkar");
+		s6.setDuration(5.02);
+		
+		
+		
+		GenericDao d1= new GenericDao();
+		
+		
+		
+		//Album a=(Album)d1.fetchById(Album.class,)
+		
+		
+		
+		
+		
+	}
+
+}

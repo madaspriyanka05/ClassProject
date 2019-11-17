@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.lti.component;
+
+/**
+ * @author vshadmin
+ *
+ */
+public interface Calculator_Interface {
+
+}

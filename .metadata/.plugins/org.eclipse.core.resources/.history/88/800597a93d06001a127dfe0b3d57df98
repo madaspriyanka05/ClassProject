@@ -1,0 +1,18 @@
+package com.lti.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.component.Car;
+
+public class TestSpellChecker {
+
+	public static void main(String[] args)
+	{
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("app-config.xml");
+		Car carobj=(Car) ctx.getBean("Kar");
+	    carobj.playmusic();
+
+	}
+
+}

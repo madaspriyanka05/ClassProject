@@ -1,0 +1,124 @@
+package com.lti.service;
+
+
+import java.time.LocalDate;
+
+import com.lti.dao.*;
+import com.lti.model.*;
+
+public class AccountService 
+{
+	
+	
+	public void openAccount(Account acc)
+  {
+	  GenericDao dao=new GenericDao();
+	  dao.save(acc);
+	  
+  }
+  
+  	public void withdraw(int accno,double amount)
+   {
+  		GenericDao d=new GenericDao();
+  		Account acct=(Account)d.fetchById(Account.class,accno);
+  		Transcation tr=new Transcation();
+  		double x=acct.getAccBal();
+  		if(x<=500)
+  		{
+  			System.out.println("InSufficient Balance");
+  		}
+  		else
+  		{
+  			double withdrawamt= acct.getAccBal()-amount;
+  			acct.setAccBal(withdrawamt);
+  			tr.setTxNo(101);
+  			tr.setTxAmt(amount);
+  			tr.setTxType("Saving");
+  			tr.setD(LocalDate.now());
+  			tr.setAcct(acct);
+  			
+  			d.save(acct);
+  			d.save(tr);
+  		}
+	  
+  
+   }
+
+  
+  public void deposit(int accno,double amount)
+  {
+	  
+	  GenericDao d=new GenericDao();
+	  Account acct=(Account)d.fetchById(Account.class,accno);
+	 Transcation tr=new Transcation();
+		double x=acct.getAccBal();
+		if(x<=500)
+		{
+			System.out.println("InSufficient Balance");
+		}
+		else
+		{
+			double depositamt= acct.getAccBal()+amount;
+			acct.setAccBal(depositamt);
+			tr.setTxNo(102);
+			tr.setTxAmt(amount);
+			tr.setTxType("Current");
+			tr.setD(LocalDate.now());
+			tr.setAcct(acct);
+			
+			d.save(acct);
+			d.save(tr);
+		}
+	  
+ 
+  }
+  
+  public void transfer (int fromAcno,int toAcno,double amount)
+  {
+	  GenericDao d=new GenericDao();
+	  Account acct1=(Account)d.fetchById(Account.class,fromAcno);
+	  Account acct2=(Account)d.fetchById(Account.class,toAcno);
+	  
+	  Transcation tr1=new Transcation();
+	  Transcation tr2=new Transcation();
+	  double x1=acct1.getAccBal();
+	  	
+		if(x1<=500)
+		{
+			System.out.println("InSufficient Balance");
+		}
+		else
+		{
+			//Tansfering --credit into from acct2 to acct1
+			double transferamt= acct1.getAccBal()-amount;
+			acct2.setAccBal(transferamt);
+			tr1.setTxNo(103);
+			tr1.setTxAmt(amount);
+			tr1.setTxType("Current");
+			tr1.setD(LocalDate.now());
+			tr1.setAcct(acct2);
+			d.save(acct2);
+			d.save(tr1);
+			
+			//debit it from acct2 to acct1
+			double transferamt1= acct2.getAccBal()-amount;
+			acct1.setAccBal(transferamt1);
+			tr2.setTxNo(104);
+			tr2.setTxAmt(amount);
+			tr2.setTxType("Saving");
+			tr2.setD(LocalDate.now());
+			tr2.setAcct(acct1);
+			d.save(acct2);
+			d.save(tr1);
+			
+		}
+	
+	  
+  }
+// 
+//  
+//  public double checkBalance(int acno)
+//  {
+//	  return acno;
+//  }
+}

@@ -1,0 +1,15 @@
+package com.lti.service;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Cart;
+
+public class BusStopService {
+
+	
+	public void addBus(Bus b)
+	{
+		GenericDao d=new GenericDao();
+		d.save(bt);
+	}
+
+}

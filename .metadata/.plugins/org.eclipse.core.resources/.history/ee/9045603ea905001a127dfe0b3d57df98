@@ -1,0 +1,14 @@
+package com.lti.component;
+
+public class Car  
+{
+
+	 private AudioSystem audioSystem;
+	
+	 @AutoWired
+	 public void playmusic()
+	 {
+		 //audioSystem= new AudioSystem();
+		 audioSystem.playFM(91.1);
+	 }
+}

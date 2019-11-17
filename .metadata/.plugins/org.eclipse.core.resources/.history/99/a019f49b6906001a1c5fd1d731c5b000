@@ -1,0 +1,16 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+
+public class TestCarParts {
+
+	@Test
+	public void test() 
+	{
+	 ApplicationContext ctx=
+	}
+
+}

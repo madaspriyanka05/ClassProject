@@ -1,0 +1,10 @@
+package com.lti.entity;
+
+public class Customer
+{
+  private int cId;
+  private String name;
+  private String email;
+  private String profilePicName;
+ 
+}

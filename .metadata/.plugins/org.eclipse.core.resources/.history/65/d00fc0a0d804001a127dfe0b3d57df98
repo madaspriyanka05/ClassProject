@@ -1,0 +1,38 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Cart;
+import com.lti.model.Item;
+
+
+public class CartItemsTest 
+{
+
+	@Test
+	public void carttest()
+	{
+
+		Cart c=new Cart();
+		c.setTotal(25000);
+		
+		GenericDao dao=new GenericDao();
+		dao.save(c);
+	}
+	
+	@Test
+	public void itemstest()
+	{
+
+		Item i=new Item();
+		i.setQuantity(1);
+		Cart c=new Cart();
+		
+		GenericDao dao=new GenericDao();
+		dao.save(i);
+	}
+
+}

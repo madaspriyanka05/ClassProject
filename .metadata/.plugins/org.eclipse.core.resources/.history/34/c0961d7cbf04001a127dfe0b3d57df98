@@ -1,0 +1,132 @@
+package com.lti.test;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.*;
+import com.lti.service.AccountService;
+
+public class TestAccount {
+
+	@Test
+	public void testOpenAccount() 
+	{
+		Account a1=new Account();
+		a1.setAccNo(1001);
+		a1.setAccName("Priyanka");
+		a1.setAccBal(5000);
+		a1.setAcctype("Saving");
+		
+		
+		Account a2=new Account();
+		a2.setAccNo(1002);
+		a2.setAccName("Poja");
+		a2.setAccBal(6000);
+		a2.setAcctype("Current");
+		
+
+		
+		Account a3=new Account();
+		a3.setAccNo(1003);
+		a3.setAccName("Laxmi");
+		a3.setAccBal(7000);
+		a3.setAcctype("Saving");
+		
+		
+		Account a4=new Account();
+		a4.setAccNo(1004);
+		a4.setAccName("Asmita");
+		a4.setAccBal(8000);
+		a4.setAcctype("Current");
+		
+		Account a5=new Account();
+		a5.setAccNo(1005);
+		a5.setAccName("Shruti");
+		a5.setAccBal(9000);
+		a5.setAcctype("Current");
+		
+
+		
+		AccountService acc=new AccountService();
+		acc.openAccount(a5);
+		acc.openAccount(a4);
+		acc.openAccount(a3);
+		acc.openAccount(a2);
+		acc.openAccount(a1);
+		
+	}
+	
+	
+	@Test
+	public void testOpenTranasaction() 
+	{
+		
+		AccountService as=new AccountService();
+		as.withdraw(1004,2000);
+	}
+	
+	
+	@Test
+	public void testdepositTranasaction() 
+	{
+		
+		AccountService as=new AccountService();
+		as.deposit(1003,2000);
+	
+	}
+	
+	@Test
+	public void testTransferTranasaction() 
+	{
+		
+		AccountService as=new AccountService();
+		as.transfer(1002, 1004, 1000);
+	}
+	
+	
+	@Test
+	public void testListofAccounts() 
+	{
+		
+		AccountService as=new AccountService();
+		List <Account> accounts=as.getAccountsByType("Current");
+		for(Account a1 :accounts)
+		 {
+			 	System.out.println("  "+a1.getAccNo()+"  "+a1.getAccName()+"  "+a1.getAccBal()+"  "+a1.getAcctype());
+		 }
+	
+	}
+	
+	@Test
+	public void testListofTranscation() 
+	{
+		
+		AccountService as=new AccountService();
+		List <Transcation> transcations=as.fetchListOfTranscations(1003,LocalDate.of(2019, 11, 11));
+		for(Transcation t1 :transcations)
+		 {
+			 	System.out.println("  "+t1.getTxNo()+"  "+t1.getTxAmt()+"   "+t1.getTxType()+" "+t1.getAcct().getAccNo()+"  "+t1.getAcct().getAccName());
+		 }
+	
+	}
+
+	
+	@Test
+	public void testListofTranscationforAccount() 
+	{
+		
+		AccountService as=new AccountService();
+		//List <Transcation> transcations=as.fetchTranscationByAccount(500);
+		List <Account> amt=as.fetchTranscationByAccount(1000);
+		
+		for(Account t1 :amt)
+		 {
+			 	System.out.println("  "+t1.getAccNo()+"  "+t1.getAccName()+" "+t1.getAccBal()+" "+t1.getTran().get(0));
+		 }
+	
+	}
+
+}

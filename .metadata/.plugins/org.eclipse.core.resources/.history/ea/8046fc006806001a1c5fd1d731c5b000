@@ -1,0 +1,12 @@
+package com.lti.component;
+
+import java.util.List;
+
+import com.lti.MyException.CarPartException;
+
+public interface CarPartsInventory
+{
+	public void addNewPart(CarPart carPart) throws CarPartException;
+	public List<CarPart> getAvailableParts();
+	
+}

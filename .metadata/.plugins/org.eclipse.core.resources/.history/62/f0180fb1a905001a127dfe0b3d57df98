@@ -1,0 +1,19 @@
+package com.lti.component;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+@Component("car")
+public class Car  
+{
+     //Inject the object o f AudioSystem
+	 private AudioSystem audioSystem;
+	
+	 @Autowired //DI 
+	 public void playmusic()
+	 {
+		 //audioSystem= new AudioSystem();
+		 audioSystem.playFM(91.1);
+	 }
+}

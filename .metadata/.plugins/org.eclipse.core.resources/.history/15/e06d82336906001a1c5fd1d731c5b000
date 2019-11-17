@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!--Loading of Annotated Classes/beans  -->
+	<context:component-scan base-package="com.lti.component;" />
+<!-- </beans>
+ Entry of class whose object will be created by Spring Framework bean 
+id will create an id for the class and identify it by the bean-id this is 
+called as inversion of control 
+<bean id="SSC" class="com.lti.component.SampleSpringClass"></bean>
+<bean id="cal" class="com.lti.component.Calculator"> -->
+</beans>  

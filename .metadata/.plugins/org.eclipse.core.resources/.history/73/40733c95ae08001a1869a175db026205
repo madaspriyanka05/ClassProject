@@ -1,0 +1,11 @@
+package com.lti.repository;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+//another name for dao
+public class CustomerRepository 
+{
+	
+
+}

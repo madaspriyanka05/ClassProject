@@ -1,0 +1,24 @@
+package com.lti.component;
+
+
+@Component("VC")
+public class Car implements Vehicle
+{
+
+	public void changeGear(int newGear) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void speedUp(int increment) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void applyBrakes(int decrement) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

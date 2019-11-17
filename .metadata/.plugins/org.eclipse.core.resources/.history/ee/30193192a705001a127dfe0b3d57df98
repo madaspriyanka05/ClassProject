@@ -1,0 +1,10 @@
+package com.lti.component;
+
+public class AudioSystem
+{
+	public void playFM(double frequency)
+	{
+		
+	}
+
+}

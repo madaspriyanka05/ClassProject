@@ -1,0 +1,9 @@
+package com.lti.component;
+
+public class TextEditor 
+{
+	public void load(String e)
+	{
+		
+	}
+}

@@ -1,0 +1,90 @@
+package com.lti.test;
+
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.lti.model.Bus;
+import com.lti.model.Cart;
+import com.lti.model.Stop;
+import com.lti.service.BusStopService;
+import com.lti.service.CartItemsService;
+
+public class BusStopTest {
+
+	@Test
+	public void Bustest(){
+
+		Bus b=new Bus();
+		b.setOperator("RajBus");;
+		b.setDepartureTime(LocalTime.of(20,05));
+		b.setArrivalTime(LocalTime.of(20, 00));
+		
+		BusStopService bst=new BusStopService();
+		bst.addBus(b);	
+	}
+
+	public void addStopToBusTest(){
+		
+		Bus b = new Bus();
+		b.setOperator("VRL Travellers");
+		b.setDepartureTime(LocalTime.of(20, 05));
+		b.setArrivalTime(LocalTime.of(19,30));
+		
+		
+		Stop st1 = new Stop();
+		 
+		 st1.setName("Rajajinagar");
+		 st1.setArrivalTime(LocalTime.of(20, 56));
+		 st1.setDepartureTime(LocalTime.of(20, 59));
+		 
+		 
+		 Stop st2 = new Stop();
+		 
+		 st2.setName("Malleswaram");
+		 st2.setArrivalTime(LocalTime.of(19, 56));
+		 st2.setDepartureTime(LocalTime.of(19,59));
+		 
+		 Stop st3 = new Stop();
+		 
+		 st3.setName("Hebbal");
+		 st3.setArrivalTime(LocalTime.of(14, 55));
+		 st3.setDepartureTime(LocalTime.of(14, 57));
+		 
+		 Stop st4 = new Stop();
+		 
+		 st4.setName("Vijaynagar");
+		 st4.setArrivalTime(LocalTime.of(16, 00));
+		 st4.setDepartureTime(LocalTime.of(16,9));
+		 
+		
+		 BusStopService dao = new BusStopService();
+		 dao.addStopToBus(st1);
+		 dao.addStopToBus(st2);
+		 dao.addStopToBus(st3);
+		 dao.addStopToBus(st4);
+
+
+
+		 
+		 
+		 
+//		 List<Stop> stops=new ArrayList<Stop>();
+//		stops.add(st1);
+//		stops.add(st2);
+//		stops.add(st3);
+//		stops.add(st4);
+//		b.setStops(stops);
+//		
+//		addStopToBus st = new addStopToBus();
+//		st.save();
+//		
+
+		
+
+		
+	}
+}
+

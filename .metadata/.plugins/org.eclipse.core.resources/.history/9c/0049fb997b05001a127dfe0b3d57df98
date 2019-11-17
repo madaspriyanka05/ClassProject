@@ -1,0 +1,10 @@
+package com.lti.component;
+
+public class SampleSpringClass 
+{
+	public String sayHello(String name)
+	{
+		return "katy Perry"+name;
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.lti.Service;
+
+public class CustomerMail {
+	@Service
+	public class SendMailService {
+
+		@Autowired
+		private MailSender mailSender;
+		
+		@Autowired
+		private SimpleMailMessage message;
+		
+		public void send() {
+			message.setTo("abc@gmail.com"); //set a proper recipient of the mail
+			message.setSubject("Test Mail");
+			message.setText("Hi!");
+			mailSender.send(message);
+		}
+	}
+	
+	
+}

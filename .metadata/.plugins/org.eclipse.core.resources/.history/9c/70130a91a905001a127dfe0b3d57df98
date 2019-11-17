@@ -1,0 +1,16 @@
+package com.lti.test;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestCarAudioSystem
+{
+	@Test
+	public void caraudioSystem(double a)
+	{
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("app-config.xml");
+		System.out.println(" "+a);
+	}
+
+}

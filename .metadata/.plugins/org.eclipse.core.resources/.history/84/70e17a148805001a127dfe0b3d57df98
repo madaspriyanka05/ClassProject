@@ -1,0 +1,15 @@
+
+package com.lti.component;
+
+/* @author Priyanka 
+ * @Date:-12-11-19
+ 
+ */
+public interface Calculator_Interface 
+{
+	public int add(int a,int b);
+	public int sub(int a,int b);
+	public double div(int a,int b);
+	public double mul(int a,int b);
+	
+}

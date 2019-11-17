@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Entry of class whose object will be created by Spring Framework -->
+	<bean id="SSClass" class="com.lti.component.SampleSpringClass">
+		<!-- <property name="name" value="Priyanka Madas"></property> -->
+	</bean>
+
+</beans>  

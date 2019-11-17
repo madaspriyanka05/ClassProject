@@ -1,0 +1,15 @@
+package com.lti.model;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="TBL_Cart")
+public class Cart 
+{
+	
+	@Id
+	@GeneratedValue
+	private int cid;
+	private int 
+
+}

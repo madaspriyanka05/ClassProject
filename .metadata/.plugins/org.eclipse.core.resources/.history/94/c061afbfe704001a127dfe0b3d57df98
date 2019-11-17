@@ -1,0 +1,24 @@
+package com.lti.service;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Bus;
+import com.lti.model.Cart;
+import com.lti.model.Item;
+import com.lti.model.Stop;
+
+public class BusStopService {
+
+	
+	public void addBus(Bus b)
+	{
+		GenericDao d=new GenericDao();
+		d.save(b);
+	}
+	public void addStopToBus(Stop st)
+	{
+		GenericDao d=new GenericDao();
+		d.save(st);
+	}
+
+
+}

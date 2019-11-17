@@ -1,0 +1,10 @@
+package com.lti.component;
+
+import org.springframework.stereotype.Component;
+
+@Component("VC")
+public class Car implements Vehicle
+{
+	
+
+}

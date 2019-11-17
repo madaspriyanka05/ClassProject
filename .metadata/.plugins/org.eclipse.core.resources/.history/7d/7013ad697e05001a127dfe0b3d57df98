@@ -1,0 +1,11 @@
+package com.lti.component;
+
+public class Calculator 
+{
+	public double square(double a)
+	{
+		double m=square (a*a);
+		return m;
+	}
+
+}

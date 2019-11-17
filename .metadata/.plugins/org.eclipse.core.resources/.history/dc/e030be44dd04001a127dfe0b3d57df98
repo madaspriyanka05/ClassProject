@@ -1,0 +1,11 @@
+package com.lti.model;
+import java.time.LocalTime;
+public class Bus {
+
+	private int busno;
+	private String operator;
+	private Localtime departureTime;
+	private LocalTime arrivalTime;
+	
+	
+}

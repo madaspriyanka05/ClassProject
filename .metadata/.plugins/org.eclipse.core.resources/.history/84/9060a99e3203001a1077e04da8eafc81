@@ -1,0 +1,29 @@
+package com.lti.model;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="TBL_ACC")
+public class Account
+{
+	@Id
+	
+	@Column(name="ACC_NO")
+	private int accNo;
+	
+	private String accName;
+	
+	@Column(name="ACC_TYPE")
+	private String acctype;
+	
+	private double accBal;
+	
+	@OneToMany(mappedBy="account",cascade=CascadeType.ALL)
+	private List <Transcation> tran;
+	
+	
+	
+	
+}

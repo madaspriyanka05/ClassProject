@@ -1,0 +1,23 @@
+package com.lti.service;
+
+import javax.persistence.GeneratedValue;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Cart;
+
+public class CartItemsService
+{
+	public void addCart(Cart ct)
+	{
+		GenericDao d=new GenericDao();
+		d.save(ct);
+	}
+
+	
+	public void addItemsToCart(Item it)
+	{
+		GenericDao d=new GenericDao();
+		d.save(it);
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.lti.repository;
+
+
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+//another name for dao
+//instead of @Component,suggestion is to use @Repository
+public class CustomerRepository 
+{
+	
+	
+}

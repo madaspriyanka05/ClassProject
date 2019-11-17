@@ -1,0 +1,34 @@
+package com.lti.test;
+
+import java.time.LocalTime;
+
+import org.junit.Test;
+
+import com.lti.model.Bus;
+import com.lti.model.Cart;
+import com.lti.service.BusStopService;
+import com.lti.service.CartItemsService;
+
+public class BusStopTest {
+
+	@Test
+	public void Bustest(){
+
+		Bus b=new Bus();
+		b.setOperator("RajBus");;
+		b.setDepartureTime(LocalTime.of(20,05));
+		b.setArrivalTime(LocalTime.of(20, 35));
+		
+		BusStopService bst=new BusStopService();
+		bst.addBus(b);	
+	}
+
+//	public void addStopToBusTest(){
+//		Bus b = new Bus();
+//		//b.setName("Rajajinagar"); 
+//		
+//		
+//		
+//	}
+}
+

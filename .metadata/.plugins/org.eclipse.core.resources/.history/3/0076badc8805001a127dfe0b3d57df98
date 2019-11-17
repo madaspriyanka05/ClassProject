@@ -1,0 +1,29 @@
+package com.lti.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.component.Calculator;
+import com.lti.component.SampleSpringClass;
+
+public class TestingSpring 
+{
+
+	public static void main(String[] args)
+	{
+		//Loading Spring's IOC Container
+		//AApplicationContext is interface and ClassPathXmlApplicationContext is an implementation of it 
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("app-config.xml");
+		//Access  the required object
+		SampleSpringClass ssc=(SampleSpringClass) ctx.getBean("SSC"); //Casting to the respective cast type to object
+		System.out.println(ssc.sayHello("Priyanka Madas"));
+		
+		Calculator c=(Calculator) ctx.getBean("cal");
+		System.out.println("Add="+c.add(10,20));
+		System.out.println("Sub="+c.sub(48,13));
+		System.out.println("Div="+c.div(20,5));
+		System.out.println("Mul="+c.mul(5, 5));
+		
+	}
+
+}

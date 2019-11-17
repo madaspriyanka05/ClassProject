@@ -1,0 +1,19 @@
+package com.lti.model;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="TBL_Cart")
+public class Cart 
+{
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="cart_gen" )
+	@SequenceGenerator(name="cart_gen",sequenceName="cart_seq",initialValue=1000,allocationSize=1)
+	private int cid;
+	private double total;
+	
+	@OneToMany
+	private List<Item> items;
+
+}

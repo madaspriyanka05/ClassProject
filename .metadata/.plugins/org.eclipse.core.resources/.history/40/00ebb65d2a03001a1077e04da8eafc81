@@ -1,0 +1,15 @@
+package com.lti.model;
+
+@Entity
+@Tbale(name="TBL_ACC")
+public class Account
+{
+	
+	@Id
+	@GeneratedValue
+	private int accNo;
+	private String accName;
+	private double accBal;
+	
+	
+}

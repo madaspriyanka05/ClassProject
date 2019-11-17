@@ -1,0 +1,20 @@
+package com.lti.model;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="TBL_ACC_TRAN")
+public class Transcations
+{
+	
+	@Id
+	@GeneratedValue
+	private int txNo;
+	
+	private String txType;
+	private double txAmt;
+	
+	
+
+}
